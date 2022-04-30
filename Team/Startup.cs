@@ -29,6 +29,7 @@ namespace TeamProject
             services.AddSingleton(mysqlConnectionConfig);
 
             services.AddScoped<ITeamRepository, TeamRepository>();
+            services.AddScoped<IPlayerRepository, PlayerRepository>();
 
             services.AddControllers();
         }

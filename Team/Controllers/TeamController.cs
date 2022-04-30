@@ -29,10 +29,10 @@ namespace TeamProject.Controllers
             return Ok(await _teamRepository.GetTeam(id));
         }
 
-        [HttpGet("{id}/teamwithplayers")]
-        public async Task<IActionResult> GetTeam(int id)
+        [HttpGet("{id}/team-with-players")]
+        public async Task<IActionResult> GetTeamWithPlayers(int id)
         {
-            return Ok(await _teamRepository.GetTeam(id));
+            return Ok(await _teamRepository.GetTeamWithPlayers(id));
         }
 
         [HttpPost]

@@ -83,7 +83,7 @@ namespace TeamProject.Repositories
 
             var team = await db.QueryFirstAsync<Team>(sqlTeam, new { id });
 
-            var sqlPlayers = @"SELECT * FROM player WHERE team_id = @id";
+            var sqlPlayers = @"SELECT * FROM player WHERE teamId = @id";
 
             var players = await db.QueryAsync<Player>(sqlPlayers, new { id });
 

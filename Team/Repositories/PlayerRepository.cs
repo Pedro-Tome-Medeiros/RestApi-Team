@@ -27,7 +27,7 @@ namespace TeamProject.Repositories
         {
             var db = dbConnection();
 
-            var sql = @"INSERT INTO player(name, age, team_id)
+            var sql = @"INSERT INTO player(name, age, teamId)
                 VALUES (@name, @age, @teamId); SELECT LAST_INSERT_ID()";
 
             player.Id = await db.QuerySingleAsync<int>(sql, new { player.Name, player.Age, player.TeamId });
@@ -69,7 +69,7 @@ namespace TeamProject.Repositories
         {
             var db = dbConnection();
 
-            var sql = @"UPDATE player SET name = @name, age = @age, team_id = @teamId WHERE id = @id";
+            var sql = @"UPDATE player SET name = @name, age = @age, teamId = @teamId WHERE id = @id";
 
             var result = await db.ExecuteAsync(sql, new { player.Name, player.Age, player.TeamId, id });
 
